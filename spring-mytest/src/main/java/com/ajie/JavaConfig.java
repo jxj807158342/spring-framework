@@ -13,43 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.ajie;
 
-public class User {
-	private String id;
-	private String userName;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-	public User() {
+@Configuration
+@ComponentScan
+public class JavaConfig {
+	@Bean
+	public User user(){
+		return  new User("001","smart哥");
 	}
-
-
-
-	public User(String id, String userName) {
-		this.id = id;
-		this.userName = userName;
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	@Override
-	public String toString() {
-		return "User{" + "id='" + id + '\'' + ", userName='" + userName + '\'' + '}';
-	}
-
-
 }
