@@ -15,12 +15,26 @@
  */
 package com.ajie;
 
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MyDemo {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
 		User user = (User)context.getBean("user");
+		boolean javaConfig = context.containsBeanDefinition("javaConfig");
+		int beanDefinitionCount = context.getBeanDefinitionCount();
+		String[] beanDefinitionNames = context.getBeanDefinitionNames();
+		for(String str:beanDefinitionNames){
+			System.out.println(str);
+		}
+		System.out.println(javaConfig);
+		System.out.println("beanDefinitionCount=="+beanDefinitionCount);
 		System.out.println(user.toString());
+		String[] beanNamesForType = context.getBeanNamesForType(User.class);
+		for(String str:beanNamesForType){
+			System.out.println(str);
+		}
+
 	}
 }
