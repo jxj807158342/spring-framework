@@ -15,11 +15,10 @@
  */
 package com.ajie;
 
-import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MyDemo {
-	public static void main(String[] args) {
+	private static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
 		User user = (User)context.getBean("user");
 		boolean javaConfig = context.containsBeanDefinition("javaConfig");
