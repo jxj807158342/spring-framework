@@ -18,7 +18,7 @@ package com.ajie;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MyDemo {
-	private static void main(String[] args) {
+	public  static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
 		User user = (User)context.getBean("user");
 		boolean javaConfig = context.containsBeanDefinition("javaConfig");
