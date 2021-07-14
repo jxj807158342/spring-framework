@@ -596,7 +596,10 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 				logger.debug("Refreshing " + getDisplayName());
 			}
 		}
-
+		// 打印日志
+		// 打印日志
+		logger.info("Refreshing " + this);
+		logger.info("Refreshing " + getDisplayName());
 		// Initialize any placeholder property sources in the context environment.
 		initPropertySources();
 
@@ -626,6 +629,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 */
 	protected void initPropertySources() {
 		// For subclasses: do nothing by default.
+		// 空实现， 啥也没执行。没执行子类
 	}
 
 	/**
@@ -1297,6 +1301,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 */
 	@Nullable
 	protected BeanFactory getInternalParentBeanFactory() {
+		logger.info("(getParent() instanceof ConfigurableApplicationContext==="+(getParent() instanceof ConfigurableApplicationContext));
 		return (getParent() instanceof ConfigurableApplicationContext ?
 				((ConfigurableApplicationContext) getParent()).getBeanFactory() : getParent());
 	}
